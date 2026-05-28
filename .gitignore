@@ -1,0 +1,33 @@
+# Build artifacts
+build/
+target/
+dist/
+out/
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python venv
+.venv/
+venv/
+langent-env/
+hello-agents-env/
+
+# Large binary files
+*.o
+*.exe
+*.dll
+*.so
+*.dylib
