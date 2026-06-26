@@ -204,24 +204,8 @@ class DecisionTree(object):
 
         return best_feature_name, best_info_gain
 
-    def choose_best_feature_gainratio(self, X, y):
-        '''
-        以返回值中best_gain_ratio 的长度来判断当前特征是否为连续值，若长度为 1 则为离散值，若长度为 2 ， 则为连续值
-        :param X: 当前所有特征的数据 pd.DaraFrame格式
-        :param y: 标签值
-        :return:  以信息增益率来选择的最佳划分属性，第一个返回值为属性名称，第二个为最佳划分属性对应的信息增益率
-        '''
-        features = X.columns
-        best_feature_name = None
-        best_gain_ratio = [float('-inf')]
-        entD = self.entroy(y)
-
-        for feature_name in features:
-            is_continuous = type_of_target(X[feature_name]) == 'continuous'
-            info_gain_ratio = self.info_gainRatio(X[feature_name], y, entD, is_continuous)
-            if info_gain_ratio[0] > best_gain_ratio[0]:
-                best_feature_name = feature_name
-                best_gain_ratio = info_gain_ratio
+    
+    
 
         return best_feature_name, best_gain_ratio
 
